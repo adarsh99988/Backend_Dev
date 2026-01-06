@@ -1,0 +1,17 @@
+| Command | Function |
+|--------|----------|
+| git init | Initializes a new Git repository |
+| git status | Shows the current status of files |
+| git add . | Adds all files to the staging area |
+| git commit -m "first commit" | Saves staged changes with a message |
+| git branch -M main | Renames the current branch to main |
+| git remote add origin repository_url | Links local repository to GitHub repository |
+| git remote -v | Displays connected remote repositories |
+| git push -u origin main | Pushes code to GitHub and sets upstream |
+| git pull origin main | Fetches and merges updates from GitHub |
+| git clone repository_url | Copies a GitHub repository to local system |
+| git fetch origin | Downloads updates from GitHub without merging |
+| git push origin branch_name | Pushes a specific branch to GitHub |
+| git checkout -b branch_name | Creates and switches to a new branch |
+| git merge branch_name | Merges a branch into the current branch |
+| git stash | Temporarily stores uncommitted changes |
