@@ -6,6 +6,7 @@ mkdir directory_name
 rm -r directory_name\
 ls -l
 git status
+git stash
 git diff
 git diff file_name
 git init
