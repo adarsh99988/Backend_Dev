@@ -1,0 +1,137 @@
+1. What is the difference between synchronous and asynchronous file operations?
+Answer:Synchronous file operations block the execution of the program until the file operation is completed.
+Example: fs.readFileSync()
+
+Asynchronous file operations do not block the program. The file task runs in the background and a callback, promise, or async/await handles the result.
+Example: fs.readFile()
+
+Key difference:
+Synchronous = blocking
+Asynchronous = non-blocking (better for performance)
+
+--------------------------------------------------------------------------------
+
+2. When should you use file streams instead of reading the entire file?
+
+Answer:
+You should use file streams when:
+
+The file size is very large
+
+You want to process data chunk by chunk
+
+You want better memory efficiency
+
+You are handling continuous data (like video, logs, uploads)
+
+Streams prevent loading the entire file into memory, making applications faster and more scalable.
+
+--------------------------------------------------------------------------------
+
+3. Explain the purpose of the ‘utf8’ encoding parameter in file operations.
+
+Answer:
+The 'utf8' encoding tells Node.js to read or write data as readable text instead of raw binary data.
+
+Example:
+
+fs.readFile('data.txt', 'utf8', callback);
+
+
+Without 'utf8', the data is returned as a Buffer.
+With 'utf8', the data is returned as a string.
+
+--------------------------------------------------------------------------------
+
+4. What are the common error codes in file system operations and what do they mean?
+
+Answer:
+Some common file system error codes are:
+
+ENOENT – File or directory does not exist
+
+EACCES – Permission denied
+
+EISDIR – Expected a file but found a directory
+
+ENOTDIR – Expected a directory but found a file
+
+EMFILE – Too many open files
+
+EPERM – Operation not permitted
+
+Handling these errors helps avoid crashes and improves reliability.
+
+--------------------------------------------------------------------------------
+
+5. How would you safely delete a directory with all its contents?
+
+Answer:
+You can safely delete a directory and all its files using:
+
+fs.rm('folderName', { recursive: true, force: true }, callback);
+
+
+recursive: true removes all subfolders and files
+
+force: true prevents errors if files don’t exist
+
+This method is safer and cleaner than deleting files one by one.
+
+--------------------------------------------------------------------------------
+
+6. Explain the concept of piping in streams with an example.
+
+Answer:
+Piping connects the output of one stream directly to the input of another stream.
+
+Example:
+
+readStream.pipe(writeStream);
+
+
+This reads data from a source file and writes it to a destination file automatically, chunk by chunk.
+
+Common use: copying files, compressing data, streaming media.
+
+--------------------------------------------------------------------------------
+
+7. Why is it important to handle errors in file operations?
+
+Answer:
+Handling errors is important because:
+
+Files may not exist
+
+Permissions may be missing
+
+Disk space may be full
+
+Unexpected crashes can occur
+
+Proper error handling:
+
+Prevents application crashes
+
+Improves user experience
+
+Makes debugging easier
+
+Ensures data safety
+
+--------------------------------------------------------------------------------
+
+8. What is the difference between writeFile and appendFile methods?
+
+Answer:
+
+writeFile:
+Overwrites the existing file or creates a new one if it doesn’t exist.
+
+fs.writeFile('file.txt', 'Hello');
+
+
+appendFile:
+Adds data to the end of the file without removing existing content.
+
+fs.appendFile('file.txt', 'Hello');
