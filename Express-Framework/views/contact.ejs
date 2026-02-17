@@ -1,0 +1,11 @@
+<h2>Contact Form</h2>
+
+<form method="POST" action="/contact">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <br><br>
+    <textarea name="message" placeholder="Your Message"></textarea>
+    <br><br>
+    <button type="submit">Send</button>
+</form>
