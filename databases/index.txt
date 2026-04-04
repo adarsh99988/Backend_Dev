@@ -1,0 +1,147 @@
+1. Online Banking System → SQL
+   Reason:
+   - Requires ACID properties (transactions must be accurate)
+   - Strong consistency needed
+   - Structured data (accounts, transactions)
+
+2. Social Media Platform → NoSQL
+   Reason:
+   - Huge unstructured data (posts, likes, comments)
+   - High scalability
+   - Flexible schema
+
+3. Real-time Chat Application → NoSQL
+   Reason:
+   - High speed reads/writes
+   - Large volume of messages
+   - Eventual consistency acceptable
+
+4. Hospital Patient Records → SQL
+   Reason:
+   - Data must be consistent and reliable
+   - Relationships (patients, doctors, reports)
+   - ACID compliance required
+
+5. IoT Sensor Data Collection → NoSQL
+   Reason:
+   - Massive streaming data
+   - High write throughput
+   - Flexible schema
+ 
+
+ 
+// EXERCISE 2: CAP THEOREM ANALYSIS
+ 
+CAP = Consistency, Availability, Partition Tolerance
+
+1. Stock Trading Platform → CP
+   - Consistency is critical (no wrong trades)
+   - Partition tolerance required
+
+2. Content Delivery Network → AP
+   - Availability is priority
+   - Can tolerate slight inconsistency
+
+3. Airline Booking System → CP
+   - No double booking (Consistency important)
+   - Partition tolerance needed
+
+4. Video Streaming Service → AP
+   - Availability is key (users should always access content)
+   - Minor inconsistency acceptable
+
+   
+
+ 
+
+1. SQL Databases:
+   * Use structured schema (tables with rows and columns)
+   * Follow ACID properties (Atomicity, Consistency, Isolation, Durability)
+   * Best for applications requiring strong consistency
+   Example: MySQL, PostgreSQL
+
+2. NoSQL Databases:
+   * Use flexible schema (JSON-like documents)
+   * Designed for scalability and high performance
+   * Suitable for unstructured or semi-structured data
+   Example: MongoDB, Cassandra
+
+Key Differences:
+* SQL → Fixed schema, strong consistency
+* NoSQL → Flexible schema, high scalability
+
+ 
+
+
+
+# EXERCISE 2: CAP THEOREM
+CAP Theorem states that a distributed system can only guarantee any two of the following three properties:
+
+1. Consistency (C):
+   All nodes see the same data at the same time
+
+2. Availability (A):
+   Every request gets a response
+
+3. Partition Tolerance (P):
+   System continues working despite network failures
+
+Explanation:
+In case of network partition, a system must choose between Consistency and Availability
+Therefore, all three cannot be achieved simultaneously
+
+ 
+
+
+# EXERCISE 3: WHEN TO USE MONGODB
+
+1. Social Media Applications:
+   . Large amount of unstructured data
+   . Flexible schema required
+
+2. Real-Time Analytics / IoT:
+   . High-speed data insertion
+   . Handles large data streams efficiently
+
+3. Content Management Systems:
+   . Dynamic data structure
+   . Frequent schema updates
+
+
+
+
+# EXERCISE 4: BSON vs JSON
+
+MongoDB uses BSON (Binary JSON) instead of JSON.
+
+Advantages of BSON:
+. Faster data processing
+. Supports additional data types (Date, ObjectId, Decimal)
+. More efficient storage
+
+Example:
+JSON:
+{ "date": "2024-01-15" }
+
+BSON:
+{ date: Date("2024-01-15") }
+
+
+
+# EXERCISE 5: MONGODB QUERY
+
+Query to find students with GPA > 3.5 and enrolled in "CS101":
+
+db.students.find({
+gpa: { $gt: 3.5 },
+courses: "CS101"
+});
+
+If courses is an array:
+
+db.students.find({
+gpa: { $gt: 3.5 },
+courses: { $in: ["CS101"] }
+});
+
+ 
