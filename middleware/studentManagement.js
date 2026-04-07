@@ -55,7 +55,7 @@ const Grade = mongoose.model("Grade", gradeSchema);
 // 1. Add new student
 async function addStudent() {
     const student = new Student({
-        name: "Adarsh",
+        name: "Adarsh Tiwari",
         email: "adarsh.tiwari_cs23@gla.ac.in.",
         gpa: 6.4,
         city: "Lucknow",
